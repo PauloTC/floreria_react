@@ -1,0 +1,42 @@
+ .wancho {
+  width: 95%;
+  max-width: 1180px;
+  margin: auto;
+}
+body {
+  font-size: 15px;
+  font-family: 'Conv_PROXIMANOVA-REGULAR_1', sans-serif;
+  color: #575659;
+  background-color: #fff;
+}
+.header {
+  color: #fff;
+  background: green;
+  text-align: center;
+}
+.Navbar {
+  text-align: right;
+}
+.Navbar button{
+
+    background: none;
+    border: none;
+}
+.FormAddItem{
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid gray;
+  margin: 0
+}
+.FormAddItem input{
+  width: 50%;
+  box-sizing: border-box;
+}
+.FormAddItem select{
+  width: 100%;
+}
+.FormAddItem button{
+  width: 100%;
+}
+
