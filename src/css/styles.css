@@ -3,6 +3,11 @@
   max-width: 1180px;
   margin: auto;
 }
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 body {
   font-size: 15px;
   font-family: 'Conv_PROXIMANOVA-REGULAR_1', sans-serif;
@@ -17,8 +22,12 @@ body {
 .Navbar {
   text-align: right;
 }
+button{
+  background: transparent;
+  border: none;
+  border: 2px solid rgb(55, 179, 74)
+}
 .Navbar button{
-
     background: none;
     border: none;
 }
@@ -39,4 +48,66 @@ body {
 .FormAddItem button{
   width: 100%;
 }
+.flor-cnt{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flor{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.flor h3{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 20px
+}
+.flor button{
 
+    max-width: 80%;
+    margin: auto;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: all 0.25s;
+    margin-top: 20px;
+}
+.flor button:hover {
+
+  background: rgb(55, 179, 74);
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  .flor {
+    width: 33.33%;
+  }
+}
+
+@media (max-width: 650px) {
+  .flor {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .flor {
+    width: 48%;
+  }
+  .flor-cnt{
+    justify-content: space-between;
+  }
+
+}
+
+@media (max-width: 480px) {
+  
+    .flor {
+      width: 100%;
+    }
+  }

@@ -3,6 +3,8 @@ import './App.css';
 import Header from './Header'
 import Navbar from './Navbar'
 import Admin from './Admin'
+import cargaFlores from '../dataFlores'
+import Flor from './Flor'
 
 class App extends Component {
 
@@ -31,21 +33,25 @@ class App extends Component {
 
   }
 
+  cargarFlores = () => {
+
+    this.setState({ flores:cargaFlores  })
+
+  }
 
   render() {
     return (
       <div className="wancho" >
         <Navbar  goAdmin={this.goAdmin}  /> 
         <Header />
-        <section className="flower-container" >
-          <div className="flower-item" >
-          <img src="" alt="flores"/>
-            <h2>Margaritas</h2>
-            <p>S/.120</p>
-          </div>
-          <a href="">Anadir al carrito</a>
-        </section>
-         <Admin agregarFlor = {this.agregarFlor}  />
+        <ul className="flor-cnt" >
+          {Object.keys(this.state.flores).map(key => (
+
+            <Flor key={key} detalle={this.state.flores[key]} />
+
+          )) }
+        </ul>  
+         <Admin cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
       </div>
     );
   }
