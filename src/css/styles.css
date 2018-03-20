@@ -58,6 +58,7 @@ button{
   width: 25%;
   margin: 0;
   margin-bottom: 40px;
+  position: relative;
 }
 .flor h3{
   text-align: center;
@@ -67,7 +68,6 @@ button{
   margin-top: 20px
 }
 .flor button{
-
     max-width: 80%;
     margin: auto;
     height: 30px;
@@ -82,6 +82,18 @@ button{
   color: #fff;
 }
 
+button[disabled] {
+
+  background: rgb(55, 179, 74);
+  color: #fff;
+  position: relative;
+  top: -50%;
+  width: 100%;
+  transform: rotate(30deg);
+  font-size: 30px;
+  height: auto;
+  
+}
 @media (max-width: 960px) {
   .flor {
     width: 33.33%;

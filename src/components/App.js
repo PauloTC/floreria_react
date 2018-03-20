@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import Admin from './Admin'
 import cargaFlores from '../dataFlores'
 import Flor from './Flor'
+import CarritoCompras from './CarritoCompras'
 
 class App extends Component {
 
@@ -17,8 +18,8 @@ class App extends Component {
 
   state = {
 
-    flores: {}
-
+    flores: {},
+    carrito: {}
   } 
 
   agregarFlor = flor => {
@@ -34,10 +35,17 @@ class App extends Component {
   }
 
   cargarFlores = () => {
-
     this.setState({ flores:cargaFlores  })
-
   }
+
+agregarCarrito = (key) => {
+  //toam copia del estado
+   const carrito = { ...this.state.carrito }
+  //agregar la orden o incrementar el numero de pedidos
+  carrito[key] = carrito[key] + 1 || 1;
+  //actualizando el estado
+  this.setState({ carrito })
+}
 
   render() {
     return (
@@ -47,11 +55,12 @@ class App extends Component {
         <ul className="flor-cnt" >
           {Object.keys(this.state.flores).map(key => (
 
-            <Flor key={key} detalle={this.state.flores[key]} />
+            <Flor agregarCarrito={this.agregarCarrito} index={key} key={key} detalle={this.state.flores[key]} />
 
           )) }
-        </ul>  
-         <Admin cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
+        </ul> 
+
+         <Admin  cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
       </div>
     );
   }

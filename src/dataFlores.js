@@ -6,7 +6,7 @@ const flores = {
     desc:
       "Everyones favorite white flor. We will cut it to the size you need and ship it.",
     precio: 1724,
-    estado: "available"
+    estado: "disponible"
   },
 
   flor2: {
@@ -15,7 +15,7 @@ const flores = {
     desc:
       "These tender, mouth-watering beauties are a fantastic hit at any dinner party.",
     precio: 3200,
-    estado: "available"
+    estado: "disponible"
   },
 
   flor3: {
@@ -24,7 +24,7 @@ const flores = {
     desc:
       "Big, sweet and tender. True dry-pack scallops from the icey waters of Alaska. About 8-10 per pound",
     precio: 1684,
-    estado: "unavailable"
+    estado: "nodisponible"
   },
 
   flor4: {
@@ -33,7 +33,7 @@ const flores = {
     desc:
       "Lean flesh with a mild, sweet flavor profile, moderately firm texture and large, moist flakes. ",
     precio: 1129,
-    estado: "available"
+    estado: "disponible"
   },
 
   flor5: {
@@ -42,7 +42,7 @@ const flores = {
     desc:
       "Crack these open and enjoy them plain or with one of our cocktail sauces",
     precio: 4234,
-    estado: "available"
+    estado: "disponible"
   },
 
   flor6: {
@@ -51,7 +51,7 @@ const flores = {
     desc:
       "This flaky, oily salmon is truly the king of the sea. Bake it, grill it, broil it...as good as it gets!",
     precio: 1453,
-    estado: "available"
+    estado: "disponible"
   },
 
   flor7: {
@@ -59,7 +59,7 @@ const flores = {
     imagen: "/images/oysters.jpg",
     desc: "A soft plump oyster with a sweet salty flavor and a clean finish.",
     precio: 2543,
-    estado: "available"
+    estado: "disponible"
   },
   flor8: {
     nombre: "Mussels",
@@ -67,7 +67,7 @@ const flores = {
     desc:
       "The best mussels from the Pacific Northwest with a full-flavored and complex taste.",
     precio: 425,
-    estado: "available"
+    estado: "disponible"
   },
 
   flor9: {
@@ -76,7 +76,7 @@ const flores = {
     desc:
       "With 21-25 two bite prawns in each pound, these sweet morsels are perfect for shish-kabobs.",
     precio: 2250,
-    estado: "available"
+    estado: "disponible"
   }
 };
 

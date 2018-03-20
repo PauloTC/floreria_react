@@ -3,11 +3,16 @@ import { formatPrice } from '../helpers'
 
 class Flor extends  React.Component{
 
+  handleEvent = () => {
 
+    this.props.agregarCarrito(this.props.index)
+
+  }
 
   render() {
 
-    const {imagen, nombre, precio} = this.props.detalle
+    const {imagen, nombre, precio, estado} = this.props.detalle
+    const hayStock = estado === "disponible" // true
 
     return(
 
@@ -15,7 +20,7 @@ class Flor extends  React.Component{
       <img height={250} width={250} src={imagen} alt=""/>      
       <h3>{nombre}</h3>
       <span>{ formatPrice(precio) }</span>
-      <button>Agregar al Carrito</button>
+      <button  onClick={this.handleEvent}  disabled={!hayStock} >{  hayStock ? 'Agregar al Carrito' : 'Agotado' }</button>
      </li>
 
     )
