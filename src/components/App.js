@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 import Admin from './Admin'
 import cargaFlores from '../dataFlores'
 import Flor from './Flor'
-import CarritoCompras from './CarritoCompras'
+import Carrito from './Carrito'
 
 class App extends Component {
 
@@ -50,17 +50,17 @@ agregarCarrito = (key) => {
   render() {
     return (
       <div className="wancho" >
+      <Admin  cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
         <Navbar  goAdmin={this.goAdmin}  /> 
+        <Carrito flores={this.state.flores} carrito={this.state.carrito} />
         <Header />
         <ul className="flor-cnt" >
-          {Object.keys(this.state.flores).map(key => (
-
-            <Flor agregarCarrito={this.agregarCarrito} index={key} key={key} detalle={this.state.flores[key]} />
-
-          )) }
+        {Object.keys(this.state.flores).map(key => (
+          
+          <Flor agregarCarrito={this.agregarCarrito} index={key} key={key} detalle={this.state.flores[key]} />
+          
+        )) }
         </ul> 
-
-         <Admin  cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
       </div>
     );
   }
