@@ -7,7 +7,9 @@ class Carrito extends React.Component{
 
     const flor = this.props.flores[key];
     const count = this.props.carrito[key];
-    const hayDisponible = flor.estado === "disponible";
+    const hayDisponible = flor && flor.estado === "disponible";
+
+    if(!flor) return null
 
     if(!hayDisponible) {
       return <li key={key}  >Lo sentimos {flor ? flor.nombre:"flor"}  no esta disponible por el  momento</li>

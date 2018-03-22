@@ -1,26 +1,55 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header'
-import Navbar from './Navbar'
 import Admin from './Admin'
 import cargaFlores from '../dataFlores'
 import Flor from './Flor'
 import Carrito from './Carrito'
+import base from "../base"
 
 class App extends Component {
-
-  goAdmin = event => {
-
-    //1. direccionando a la pagina del admin
-    this.props.history.push(`/admin/login`)
-
-  }
 
   state = {
 
     flores: {},
     carrito: {}
   } 
+
+
+  componentDidMount(){
+
+    const { params } = this.props.match;
+
+    const localStorageRef = localStorage.getItem(params.tiendaId)
+
+    if(localStorageRef) {
+    
+          this.setState({  carrito: JSON.parse(localStorageRef) })  // localStorageReaf es un string con JSON parse lo convierto en objeto
+    
+        }
+
+
+      // const { params } = this.props.match;
+      this.ref = base.syncState( `${params.tiendaId}/flores`, {
+        context:this,
+        state:'flores'
+      } )
+    }
+    
+
+  componentDidUpdate(){
+
+    localStorage.setItem(this.props.match.params.tiendaId, JSON.stringify(this.state.carrito)) // Conviero this.state.carrito en un un string porque lo interpreta como un objeto
+    console.log(this.state.carrito)
+    console.log(JSON.stringify(this.state.carrito))
+    
+  }
+
+  componentWillUnmount(){
+    
+    base.removeBinding(this.ref)
+
+  }
 
   agregarFlor = flor => {
     //  Tomamos una copia del estado actual existente
@@ -50,10 +79,9 @@ agregarCarrito = (key) => {
   render() {
     return (
       <div className="wancho" >
-      <Admin  cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
-        <Navbar  goAdmin={this.goAdmin}  /> 
+        <Admin  cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
         <Carrito flores={this.state.flores} carrito={this.state.carrito} />
-        <Header />
+        <Header nombre={this.props.match.params.tiendaId} />
         <ul className="flor-cnt" >
         {Object.keys(this.state.flores).map(key => (
           
