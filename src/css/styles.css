@@ -1,9 +1,9 @@
- .wancho {
+.wancho {
   width: 95%;
   max-width: 1180px;
   margin: auto;
 }
-img{
+img {
   max-width: 100%;
   height: auto;
   display: block;
@@ -14,112 +14,279 @@ body {
   color: #575659;
   background-color: #fff;
 }
-.header {
-  color: #fff;
-  background: green;
-  text-align: center;
-}
 .Navbar {
   text-align: right;
 }
-button{
+button {
   background: transparent;
   border: none;
-  border: 2px solid rgb(55, 179, 74)
+  border: 2px solid #37b34a;
 }
-.Navbar button{
-    background: none;
-    border: none;
+.Navbar button {
+  background: none;
+  border: none;
 }
-.FormAddItem{
+.FormAddIte {
   width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  border: 2px solid gray;
-  margin: 0
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 2px solid #808080;
+  margin: 0;
 }
-.FormAddItem input{
+.FormAddItem input {
   width: 50%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.FormAddItem select{
+.FormAddItem select {
   width: 100%;
 }
-.FormAddItem button{
+.FormAddItem button {
   width: 100%;
 }
-.flor-cnt{
+.flor-cnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-.flor{
+.flor {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 25%;
   margin: 0;
   margin-bottom: 40px;
   position: relative;
 }
-.flor h3{
+.flor h3 {
   text-align: center;
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
-  margin-top: 20px
+  margin-top: 20px;
 }
-.flor button{
-    max-width: 80%;
-    margin: auto;
-    height: 30px;
-    font-size: 12px;
-    border-radius: 4px;
-    transition: all 0.25s;
-    margin-top: 20px;
+.flor button {
+  max-width: 80%;
+  margin: auto;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 4px;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  margin-top: 20px;
 }
 .flor button:hover {
-
-  background: rgb(55, 179, 74);
+  background: #37b34a;
   color: #fff;
 }
-
 button[disabled] {
-
-  background: rgb(55, 179, 74);
+  background: #37b34a;
   color: #fff;
   position: relative;
   top: -50%;
   width: 100%;
-  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
   font-size: 30px;
   height: auto;
-  
+}
+.ActionWrap {
+  margin-bottom: 60px;
+}
+.Header {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 60px;
+  background: #ff6347;
+  padding: 20px 0px;
+}
+.Header .wancho {
+  position: relative;
+}
+.Header img {
+  width: 100%;
+}
+.Header h1 {
+  color: #fff;
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+.CarritoWrap {
+  width: 100%;
+}
+.CarritoWrap h2 {
+  font-size: 20px;
+}
+.CarritoListaProductos,
+.CarritoTotal {
+  width: 30%;
+}
+.CarritoListaProductos {
+  margin: 0;
+}
+.CarritoListaProductos button {
+  border: 1px solid #000;
+}
+.CarritoListaProductos li {
+  border-bottom: 1px solid #000;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.CarritoListaProductos li button {
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.CarritoListaProductos span {
+  margin: 0;
+}
+.CarritoPrecio {
+  margin: 0;
+}
+.CarritoTotal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 0px;
+}
+input[name*='precio'] {
+  text-align: right;
+}
+.AdminWrap {
+  margin-bottom: 60px;
+}
+.AdminWrap h2 {
+  font-size: 20px;
+}
+.AdminWrapFlor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.FormAddItem {
+  margin: 0;
+  width: 32%;
+  margin-bottom: 20px;
+  margin-right: 2%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #000;
+}
+.FormAddItem input,
+.FormAddItem select {
+  min-height: 30px;
+  border: none;
+}
+.FormAddItem button {
+  border: 1px solid #f00;
+  background: #ff6347;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 16px;
+}
+.FormAddItem:nth-child(3n) {
+  margin-right: 0%;
+}
+.count-enter {
+  position: absolute;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  left: 0;
+  top: 50%;
+}
+.count-enter.count-enter-active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+.count-exit {
+  position: absolute;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  left: 0;
+  bottom: 0;
+}
+.count-exit.count-exit-active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 @media (max-width: 960px) {
   .flor {
     width: 33.33%;
   }
+  .FormAddItem {
+    width: 49%;
+    margin-right: 0;
+  }
+  .FormAddItem:nth-child(odd) {
+    margin-right: 2%;
+  }
+  .CarritoListaProductos,
+  .CarritoTotal {
+    width: 50%;
+  }
 }
-
 @media (max-width: 650px) {
   .flor {
     width: 50%;
   }
+  .CarritoListaProductos,
+  .CarritoTotal {
+    width: 80%;
+  }
 }
-
 @media (max-width: 480px) {
-
-  .flor {
-    width: 48%;
+  .flor h3 {
+    font-size: 18px;
   }
-  .flor-cnt{
-    justify-content: space-between;
+  .flor-cn {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-
+  .flor-cn .flor {
+    width: 100%;
+  }
+  .FormAddItem {
+    width: 100%;
+    margin-right: 0;
+  }
+  .FormAddItem:nth-child(odd) {
+    margin-right: 0;
+  }
+  .Header h1 {
+    font-size: 40px;
+  }
 }
-
-@media (max-width: 480px) {
-  
-    .flor {
-      width: 100%;
-    }
-  }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatPrice } from '../helpers'
 
 class EditFishForm extends React.Component{
 
@@ -17,10 +18,10 @@ class EditFishForm extends React.Component{
 
     return(
 
-      <div className="flor-editar">
+      <div className="FormAddItem">
         <input type="text"  value={this.props.flor.nombre} onChange={this.handleChange}  name="nombre" />
-        <input type="text"  value={this.props.flor.precio} onChange={this.handleChange}  name="precio" />
-        <select  value={this.props.flor.estado} onChange={this.handleChange}  name="estado" >
+        <input type="text"  value=  { formatPrice(this.props.flor.precio) } onChange={this.handleChange}  name="precio" />
+        <select  value= {this.props.flor.estado} onChange={this.handleChange}  name="estado" >
           <option value="disponible">Disponible</option>
           <option value="nodisponible">Agotado</option>          
         </select>

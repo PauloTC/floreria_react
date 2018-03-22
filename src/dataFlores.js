@@ -1,7 +1,7 @@
 // This is just some sample data so you don't have to think of your own!
 const flores = {
   flor1: {
-    nombre: "Pacific Halibut",
+    nombre: "Girasoles",
     imagen: "/images/hali.jpg",
     desc:
       "Everyones favorite white flor. We will cut it to the size you need and ship it.",
@@ -10,7 +10,7 @@ const flores = {
   },
 
   flor2: {
-    nombre: "Lobster",
+    nombre: "Rosas",
     imagen: "/images/lobster.jpg",
     desc:
       "These tender, mouth-watering beauties are a fantastic hit at any dinner party.",
@@ -19,7 +19,7 @@ const flores = {
   },
 
   flor3: {
-    nombre: "Sea Scallops",
+    nombre: "Hortensias",
     imagen: "/images/scallops.jpg",
     desc:
       "Big, sweet and tender. True dry-pack scallops from the icey waters of Alaska. About 8-10 per pound",
@@ -28,7 +28,7 @@ const flores = {
   },
 
   flor4: {
-    nombre: "Mahi Mahi",
+    nombre: "Tulipanes",
     imagen: "/images/mahi.jpg",
     desc:
       "Lean flesh with a mild, sweet flavor profile, moderately firm texture and large, moist flakes. ",
@@ -37,7 +37,7 @@ const flores = {
   },
 
   flor5: {
-    nombre: "King Crab",
+    nombre: "Dalias",
     imagen: "/images/crab.jpg",
     desc:
       "Crack these open and enjoy them plain or with one of our cocktail sauces",
@@ -46,7 +46,7 @@ const flores = {
   },
 
   flor6: {
-    nombre: "Atlantic Salmon",
+    nombre: "Lirios",
     imagen: "/images/salmon.jpg",
     desc:
       "This flaky, oily salmon is truly the king of the sea. Bake it, grill it, broil it...as good as it gets!",
@@ -55,14 +55,14 @@ const flores = {
   },
 
   flor7: {
-    nombre: "Oysters",
+    nombre: "Cannas índicas",
     imagen: "/images/oysters.jpg",
     desc: "A soft plump oyster with a sweet salty flavor and a clean finish.",
     precio: 2543,
     estado: "disponible"
   },
   flor8: {
-    nombre: "Mussels",
+    nombre: "Narcisos",
     imagen: "/images/mussels.jpg",
     desc:
       "The best mussels from the Pacific Northwest with a full-flavored and complex taste.",
@@ -71,7 +71,7 @@ const flores = {
   },
 
   flor9: {
-    nombre: "Jumbo Prawns",
+    nombre: "Flores del Cerezo",
     imagen: "/images/prawns.jpg",
     desc:
       "With 21-25 two bite prawns in each pound, these sweet morsels are perfect for shish-kabobs.",

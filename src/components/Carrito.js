@@ -1,5 +1,6 @@
 import React from 'react'
 import { formatPrice } from '../helpers'
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 class Carrito extends React.Component{
 
@@ -15,11 +16,24 @@ class Carrito extends React.Component{
       return <li key={key}  >Lo sentimos {flor ? flor.nombre:"flor"}  no esta disponible por el  momento</li>
     }
     return(
+      
       <li  key={key}>
-        {count} Arreglo {flor.nombre} 
-        {formatPrice(count * flor.precio)}
-        <button  onClick={ () =>  this.props.removerDelCarrito(key)} >Eliminar pedido</button>
-      </li>
+      <TransitionGroup  component="span" className="count"  >
+          <CSSTransition  
+              classNames="count" 
+              key={key}
+              timeout = {{  enter:500, exit:500  }} 
+              >
+                <span>{count}</span>
+            </CSSTransition>
+        </TransitionGroup>
+           Arreglo {flor.nombre} 
+          <span className="CarritoPrecio" >
+            {formatPrice(count * flor.precio)}
+          </span>
+          <button  onClick={ () =>  this.props.removerDelCarrito(key)} >&times;</button>
+        </li>
+      
     )
   }
 
@@ -41,10 +55,10 @@ class Carrito extends React.Component{
 
     return(
 
-      <div className="carrito-ctn">
+      <div className="CarritoWrap">
         <h2>Carrito de Compras</h2>
-        <ul className="poductos-lista" >{itemIds.map(this.renderCarrito)}</ul>
-        <div className="carrito-total">
+        <ul className="CarritoListaProductos" >{itemIds.map(this.renderCarrito)}</ul>
+        <div className="CarritoTotal">
           Total
           <strong>{formatPrice(total)}</strong>
         </div>

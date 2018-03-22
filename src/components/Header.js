@@ -4,8 +4,10 @@ class Header extends React.Component {
 
     render(){
       return(
-        <header className="header" >
-          <h1>{this.props.nombre}</h1>
+        <header className="Header" >
+          <div className="wancho">
+              <h1>{this.props.nombre}</h1>
+          </div>
         </header>
       )
     }

@@ -30,7 +30,7 @@ class AddFlorForm extends React.Component {
   render () {
 
     return(
-
+      
       <form  className="FormAddItem" onSubmit={this.crearFlor}  action="">
           <input  name="nombre" ref={this.nombreRef}   placeholder="Nombre"  type="text"/>
           <input  name="precio" ref={this.precioRef}  placeholder="Precio"  type="text"/>

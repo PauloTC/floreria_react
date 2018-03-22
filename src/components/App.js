@@ -107,31 +107,37 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wancho" >
-        <Admin  
-            cargarFlores={this.cargarFlores}  
-            agregarFlor = {this.agregarFlor}
-            eliminarFlor = {this.eliminarFlor}
-            actualizaFlor = {this.actualizaFlor}
-            flores = {this.state.flores}
-         />
-        <Carrito 
-            flores={this.state.flores} 
-            carrito={this.state.carrito}
-            removerDelCarrito = {this.removerDelCarrito}
-        />
+      <div className="Container">   
+        <div className="wancho" >
+          <div className="ActionWrap">
+              <Admin  
+                  cargarFlores={this.cargarFlores}  
+                  agregarFlor = {this.agregarFlor}
+                  eliminarFlor = {this.eliminarFlor}
+                  actualizaFlor = {this.actualizaFlor}
+                  flores = {this.state.flores}
+              />
+              <Carrito 
+                  flores={this.state.flores} 
+                  carrito={this.state.carrito}
+                  removerDelCarrito = {this.removerDelCarrito}
+                />
+          </div>
+        </div>
         <Header nombre={this.props.match.params.tiendaId} />
-        <ul className="flor-cnt" >
-        {Object.keys(this.state.flores).map(key => (
-          
-          <Flor 
-              agregarCarrito={this.agregarCarrito} 
-              index={key} key={key} 
-              detalle={this.state.flores[key]}
-           />
-          
-        )) }
-        </ul> 
+        <div className="wancho" >
+          <ul className="flor-cnt" >
+          {Object.keys(this.state.flores).map(key => (
+            
+            <Flor 
+                agregarCarrito={this.agregarCarrito} 
+                index={key} key={key} 
+                detalle={this.state.flores[key]}
+            />
+            
+          )) }
+          </ul> 
+        </div>
       </div>
     );
   }
