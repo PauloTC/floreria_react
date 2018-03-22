@@ -67,25 +67,68 @@ class App extends Component {
     this.setState({ flores:cargaFlores  })
   }
 
-agregarCarrito = (key) => {
-  //toam copia del estado
-   const carrito = { ...this.state.carrito }
-  //agregar la orden o incrementar el numero de pedidos
-  carrito[key] = carrito[key] + 1 || 1;
-  //actualizando el estado
-  this.setState({ carrito })
-}
+  eliminarFlor = (key) => {
+    // copia del estado
+    const flores = { ...this.state.flores }
+    //elimino flor
+    flores[key] = null
+    //actualizo el estado
+    this.setState({  flores })
+  }
+
+  actualizaFlor = (key, actualizadaFlor) =>{
+    //tomo copia del estado
+    const flores = {  ...this.state.flores}
+    // Actualizo el estado
+    flores[key] = actualizadaFlor;
+    //Coloco el estado
+    this.setState({ flores })
+
+  }
+
+  agregarCarrito = (key) => {
+    //toam copia del estado
+    const carrito = { ...this.state.carrito }
+    //agregar la orden o incrementar el numero de pedidos
+    carrito[key] = carrito[key] + 1 || 1;
+    //actualizando el estado
+    this.setState({ carrito })
+  }
+
+
+  removerDelCarrito = (key) => {
+
+    const carrito = { ...this.state.carrito }
+
+    delete carrito[key]
+
+    this.setState({ carrito })
+  } 
 
   render() {
     return (
       <div className="wancho" >
-        <Admin  cargarFlores={this.cargarFlores}  agregarFlor = {this.agregarFlor}  />
-        <Carrito flores={this.state.flores} carrito={this.state.carrito} />
+        <Admin  
+            cargarFlores={this.cargarFlores}  
+            agregarFlor = {this.agregarFlor}
+            eliminarFlor = {this.eliminarFlor}
+            actualizaFlor = {this.actualizaFlor}
+            flores = {this.state.flores}
+         />
+        <Carrito 
+            flores={this.state.flores} 
+            carrito={this.state.carrito}
+            removerDelCarrito = {this.removerDelCarrito}
+        />
         <Header nombre={this.props.match.params.tiendaId} />
         <ul className="flor-cnt" >
         {Object.keys(this.state.flores).map(key => (
           
-          <Flor agregarCarrito={this.agregarCarrito} index={key} key={key} detalle={this.state.flores[key]} />
+          <Flor 
+              agregarCarrito={this.agregarCarrito} 
+              index={key} key={key} 
+              detalle={this.state.flores[key]}
+           />
           
         )) }
         </ul> 

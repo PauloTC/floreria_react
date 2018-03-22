@@ -18,6 +18,7 @@ class Carrito extends React.Component{
       <li  key={key}>
         {count} Arreglo {flor.nombre} 
         {formatPrice(count * flor.precio)}
+        <button  onClick={ () =>  this.props.removerDelCarrito(key)} >Eliminar pedido</button>
       </li>
     )
   }
