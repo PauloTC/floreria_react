@@ -1,8 +1,11 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 
 class AddFlorForm extends React.Component {
 
+  static propTypes = {
+    agregarFlor: PropTypes.func
+  }
 
   nombreRef = React.createRef()
   precioRef = React.createRef()

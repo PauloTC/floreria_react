@@ -1,10 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import AddFlorForm from './AddFlorForm'
 import EditFlorForm from './EditFlorForm'
 
-
-
 class Admin  extends React.Component {
+
+
+  static propTypes = {
+
+    flores : PropTypes.object,
+    actualizaFlor : PropTypes.funct,
+    eliminarFlor : PropTypes.funct,
+    cargarFlores : PropTypes.funct,
+
+  }
 
   render(){
     return(

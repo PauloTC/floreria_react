@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import './App.css';
 import Header from './Header'
 import Admin from './Admin'
@@ -9,6 +10,13 @@ import base from "../base"
 
 class App extends Component {
 
+  static propTypes = {
+
+    match : PropTypes.obj,
+
+  }
+  
+  
   state = {
 
     flores: {},
@@ -83,7 +91,6 @@ class App extends Component {
     flores[key] = actualizadaFlor;
     //Coloco el estado
     this.setState({ flores })
-
   }
 
   agregarCarrito = (key) => {

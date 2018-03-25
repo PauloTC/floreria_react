@@ -1,8 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { formatPrice } from '../helpers'
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 class Carrito extends React.Component{
+
+  static propTypes = {
+
+    flores : PropTypes.obj,
+    carrito : PropTypes.obj,
+    removerDelCarrito : PropTypes.func
+    
+  }
+
 
   renderCarrito = key => {
 

@@ -1,7 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { formatPrice } from '../helpers'
 
 class Flor extends  React.Component{
+
+  static propTypes = {
+
+      detalle: PropTypes.shape({
+        imagen : PropTypes.string,
+        nombre : PropTypes.string,
+        estado : PropTypes.string,
+        precio : PropTypes.number
+      }),
+      agregarCarrito: PropTypes.func
+  }
 
   handleEvent = () => {
 

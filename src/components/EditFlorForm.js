@@ -1,13 +1,28 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { formatPrice } from '../helpers'
 
-class EditFishForm extends React.Component{
+class EditFlorForm extends React.Component{
+
+
+  static propTypes = {
+    flor : PropTypes.shape({
+      imagen : PropTypes.string,
+      nombre : PropTypes.string,
+      estado : PropTypes.string,
+      precio : PropTypes.number
+    }),
+    index : PropTypes.string,
+    actualizaFlor : PropTypes.func,
+    eliminarFlor : PropTypes.func
+
+  }
 
   handleChange = (event) => {
 
     const actualizaFlor = {
 
-      ...this.props.fish,
+      ...this.props.flor,
       [event.currentTarget.name]: event.currentTarget.value
     }
     this.props.actualizaFlor(this.props.index, actualizaFlor)
@@ -34,4 +49,4 @@ class EditFishForm extends React.Component{
   }
 }
 
-export default EditFishForm
+export default EditFlorForm
