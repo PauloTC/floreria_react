@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { formatPrice } from '../helpers'
 
 class EditFlorForm extends React.Component{
 
@@ -35,7 +34,7 @@ class EditFlorForm extends React.Component{
 
       <div className="FormAddItem">
         <input type="text"  value={this.props.flor.nombre} onChange={this.handleChange}  name="nombre" />
-        <input type="text"  value=  { formatPrice(this.props.flor.precio) } onChange={this.handleChange}  name="precio" />
+        <input type="text"  value=  {this.props.flor.precio} onChange={this.handleChange}  name="precio" />
         <select  value= {this.props.flor.estado} onChange={this.handleChange}  name="estado" >
           <option value="disponible">Disponible</option>
           <option value="nodisponible">Agotado</option>          
